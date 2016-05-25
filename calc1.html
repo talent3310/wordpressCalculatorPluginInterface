@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+
+  <!-- Earn revenue ================================================== -->
+<!---------------------- upper 1---------------------------->
+            <div class="table-responsive">
+              <form name="main-calculator" class="form-inline">
+                <table class="table table-condensed">
+                  <tbody><tr class="topmain">
+                    <th class="top_blue">Description</th>
+                     <th class="top_blue"></th>
+                    <th style="border-left: 3px solid #002255;" class="text-center">Your Value</th>
+                  </tr>
+                  <tr>
+                    <td>Annual number of unique patients (U.S. average per family medicine provider: 3279<sup>1</sup>)</td>
+                    <td></td>
+                    <td class="vals"><input style="font-size: 18px;" type="text" id="mainPatients" size="8" onChange="mainTable()" onpaste="this.onchange();" value="3279"></td>
+                  </tr>
+                  <tr class="back_gray">
+                    <td>Percent of patients covered by Medicare (U.S. average: 21.85%<sup>1</sup>)</td>
+                    <td></td>
+                    <td class="vals"><input style="font-size: 18px;" type="text" id="tablePercentCovered" size="8" onChange="mainTable()" onpaste="this.onchange();" value="21.85%"></td>
+                  </tr>
+                  <tr>
+                    <td>Annual number of unique Medicare patients</td>
+                    <td></td>
+                    <td style="font-weight: 600;" class="vals bordernone"><input style="font-size: 18px;" type="text" id="tableAnnualMedicare" size="8" readonly="true" disabled="" value="716"></td>
+                  </tr>
+                  <tr class="back_gray">
+                    <td>Percent with 2+ chronic conditions (U.S. average: 68.60%<sup>2</sup>)</td>
+                    <td></td>
+                    <td class="vals"><input style="font-size: 18px;" type="text" id="tablePercentChronic" size="8" onChange="mainTable()" onpaste="this.onchange();" value="68.60%"></td>
+                  </tr>
+                  <tr>
+                    <td>Annual number of unique CCM patients</td>
+                    <td></td>
+                    <td class="vals bordernone"><input style="font-size: 18px;" type="text" id="tableAnnualCCM" size="8" readonly="true" disabled="" value="491"></td>
+                  </tr>
+                  <tr>
+                   <td> CCM monthly payment (U.S. average: $41.44<sup>3</sup>) or select your locality</td>
+                    <td></td>
+                    <td class="vals"></td>
+                  </tr>
+                  <tr>
+                    <td style="font-size: 18px;">
+                      <select style="font-size: 15px; font-weight: 400;" id="ccmLocality" class="form-control" onChange="mainTableLocality()">
+                        <option value="41.44" selected="">U.S. average</option>
+                        <option value="38.26">Alabama</option>
+                        <option value="53.20">Alaska</option>
+                        <option value="40.64">Arizona</option>
+                        <option value="37.82">Arkansas</option>
+                        <option value="45.24">California, Anaheim/Santa Ana</option>
+                        <option value="44.54">California, Los Angeles</option>
+                        <option value="46.40">California, Marin/Napa/Solano</option>
+                        <option value="45.93">California, Oakland/Berkeley</option>
+                        <option value="48.57">California, San Francisco</option>
+                        <option value="48.23">California, San Mateo</option>
+                        <option value="47.99">California, Santa Clara</option>
+                        <option value="44.39">California, Ventura</option>
+                        <option value="42.37">California, Rest of California</option>
+                        <option value="41.14">Colorado</option>
+                        <option value="43.80">Connecticut</option>
+                        <option value="45.93">DC + MD/VA Suburbs</option>
+                        <option value="41.74">Delaware</option>
+                        <option value="42.37">Florida, Fort Lauderdale</option>
+                        <option value="43.53">Florida, Miami</option>
+                        <option value="40.57">Florida, Rest of Florida</option>
+                        <option value="40.82">Georgia, Atlanta</option>
+                        <option value="38.91">Georgia, Rest of Georgia</option>
+                        <option value="43.18">Hawaii/Guam</option>
+                        <option value="38.32">Idaho</option>
+                        <option value="43.27">Illinois, Chicago</option>
+                        <option value="40.93">Illinois, East St. Louis</option>
+                        <option value="42.99">Illinois, Suburban Chicago</option>
+                        <option value="39.58">Illinois, Rest of Illinois</option>
+                        <option value="38.88">Indiana</option>
+                        <option value="38.27">Iowa</option>
+                        <option value="38.63">Kansas</option>
+                        <option value="38.28">Kentucky</option>
+                        <option value="41.08">Louisiana, New Orleans</option>
+                        <option value="39.13">Louisiana, Rest of Louisiana</option>
+                        <option value="40.43">Maine, Southern Maine</option>
+                        <option value="38.87">Maine, Rest of Maine</option>
+                        <option value="43.28">Maryland, Baltimore/Surr. Cntys</option>
+                        <option value="41.73">Maryland, Rest of Maryland</option>
+                        <option value="43.50">Massachusetts, Metropolitan Boston</option>
+                        <option value="41.80">Massachusetts, Rest of Massachusetts</option>
+                        <option value="41.18">Michigan, Detroit</option>
+                        <option value="39.35">Michigan, Rest of Michigan</option>
+                        <option value="40.19">Minnesota</option>
+                        <option value="37.88">Mississippi</option>
+                        <option value="40.01">Missouri, Metropolitan Kansas City</option>
+                        <option value="40.06">Missouri, Metropolitan St Louis</option>
+                        <option value="38.07">Missouri, Rest of Missouri</option>
+                        <option value="41.14">Montana</option>
+                        <option value="38.29">Nebraska</option>
+                        <option value="41.80">Nevada</option>
+                        <option value="41.65">New Hampshire</option>
+                        <option value="45.01">New Jersey, Northern New Jersey</option>
+                        <option value="43.68">New Jersey, Rest of New Jersey</option>
+                        <option value="39.63">New Mexico</option>
+                        <option value="45.99">New York, Manhattan</option>
+                        <option value="47.23">New York, NYC Suburbs/Long I.</option>
+                        <option value="43.03">New York, Poughkpsie/N NYC Suburbs</option>
+                        <option value="47.14">New York, Queens</option>
+                        <option value="39.51">New York, Rest of New York</option>
+                        <option value="39.26">North Carolina</option>
+                        <option value="40.18">North Dakota</option>
+                        <option value="39.37">Ohio</option>
+                        <option value="38.35">Oklahoma</option>
+                        <option value="41.37">Oregon, Portland</option>
+                        <option value="39.82">Oregon, Rest of Oregon</option>
+                        <option value="43.18">Pennsylvania, Metropolitan Philadelphia</option>
+                        <option value="39.55">Pennsylvania, Rest of Pennsylvania</option>
+                        <option value="34.63">Puerto Rico</option>
+                        <option value="41.88">Rhode Island</option>
+                        <option value="38.86">South Carolina</option>
+                        <option value="39.96">South Dakota</option>
+                        <option value="38.35">Tennessee</option>
+                        <option value="40.82">Texas, Austin</option>
+                        <option value="39.03">Texas, Beaumont</option>
+                        <option value="40.99">Texas, Brazoria</option>
+                        <option value="41.04">Texas, Dallas</option>
+                        <option value="40.51">Texas, Fort Worth</option>
+                        <option value="41.40">Texas, Galveston</option>
+                        <option value="41.27">Texas, Houston</option>
+                        <option value="39.16">Texas, Rest of Texas</option>
+                        <option value="39.69">Utah</option>
+                        <option value="40.43">Vermont</option>
+                        <option value="40.27">Virginia</option>
+                        <option value="40.11">Virgin Islands</option>
+                        <option value="43.36">Washington, Seattle (King Cnty)</option>
+                        <option value="40.33">Washington, Rest of Washington</option>
+                        <option value="38.34">West Virginia</option>
+                        <option value="39.41">Wisconsin</option>
+                        <option value="41.13">Wyoming</option>
+                      </select>
+                    </td>
+                    <td></td>
+                    <td class="vals"><input style="font-size: 18px;" type="text" id="mainCCMPayment" size="8" onChange="mainTable()" onpaste="this.onchange();" value="$41.44"></td>
+                  </tr>
+                  <tr class="back_gray">
+                    <td class="border_c_blue">Estimated annual CCM reimbursement for family medicine physician</td>
+                    <td class="border_c_blue"></td>
+                    <td class="vals border_blue"><input style="font-size: 18px;" type="text" id="mainRevenue" size="8" readonly="true" disabled="" value="$244,164.48"></td>
+                  </tr>
+                </tbody></table>
+              </form>
+            </div>
+
+          </div>
+
+
+  <script src="js/jquery-1.11.3.min.js"></script>
+<!--  <script src="js/jquery-1.11.3.min.js"></script>-->
+
+
+<script type="text/javascript">
+    Number.prototype.formatMoney = function(decPlaces, thouSeparator, decSeparator) {
+        var n = this,
+        decPlaces = isNaN(decPlaces = Math.abs(decPlaces)) ? 2 : decPlaces,
+        decSeparator = decSeparator == undefined ? "." : decSeparator,
+        thouSeparator = thouSeparator == undefined ? "," : thouSeparator,
+        sign = n < 0 ? "-" : "",
+        i = parseInt(n = Math.abs(+n || 0).toFixed(decPlaces)) + "",
+        j = (j = i.length) > 3 ? j % 3 : 0;
+        return sign + (j ? i.substr(0, j) + thouSeparator : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thouSeparator) + (decPlaces ? decSeparator + Math.abs(n - i).toFixed(decPlaces).slice(2) : "");
+    };
+
+/* ---------------------- Upper 1 ---------------------- */
+
+
+    function calcWin() {
+        var patients = document.getElementById("patientsCount").value;
+        var profit = document.getElementById("patientsProfit");
+        var medicaid = 42;
+        var cs = 28;
+        var profitV = (medicaid - cs) * patients;
+        profit.value = profitV.formatMoney();
+    };
+
+    function initCalcs() {
+//      calcWinModal();
+      mainTable();
+    };
+
+      function calcWinModal() {
+        var patients = document.getElementById("patientsCountModal").value;
+        var revenue = document.getElementById("patientsProfitModal");
+        var medicaid = 42;
+        var cs = 28;
+        var revenueV = medicaid * patients;
+        revenue.value = revenueV.formatMoney();
+    };
+
+    function mainTableLocality() {
+      var ccmPayment = document.getElementById("ccmLocality").value;
+      document.getElementById("mainCCMPayment").value = "$" + ccmPayment;
+      mainTable();
+    };
+
+    function mainTable() {
+      var patients = document.getElementById("mainPatients").value;
+      if (isNaN(patients)) {
+         patients = 3279;
+         document.getElementById("mainPatients").value = patients;
+      }
+
+      var percentCovered = document.getElementById("tablePercentCovered").value;
+      if (percentCovered.charAt(percentCovered.length - 1) == "%")
+         percentCovered = percentCovered.substring(0,percentCovered.length - 1);
+      if (isNaN(percentCovered)) {
+         percentCovered = 21.85;
+         document.getElementById("tablePercentCovered").value = percentCovered + "%";
+      }
+
+      var annualMedicare = Math.round(patients * percentCovered / 100);
+      document.getElementById("tableAnnualMedicare").value = annualMedicare;
+
+      var percentChronic = document.getElementById("tablePercentChronic").value;
+      if (percentChronic.charAt(percentChronic.length - 1) == "%")
+         percentChronic = percentChronic.substring(0,percentChronic.length - 1);
+      if (isNaN(percentChronic)) {
+         percentChronic = 68.60;
+         //document.getElementById("tablePercentChronic").value = percentChronic + "%";
+		 document.getElementById("tablePercentChronic").value = '68.60%';
+      }
+
+      var annualCCM = Math.round(annualMedicare * percentChronic / 100);
+      document.getElementById("tableAnnualCCM").value = annualCCM;
+
+      var ccmPayment = document.getElementById("mainCCMPayment").value;
+      if (ccmPayment.charAt(0) == "$")
+         ccmPayment = ccmPayment.substring(1);
+      if (isNaN(ccmPayment)) {
+         ccmPayment = 43.53;
+         document.getElementById("mainCCMPayment").value = "$43.53";
+      }
+
+      var revenue = annualCCM * ccmPayment * 12;
+      document.getElementById("mainRevenue").value = "$" + revenue.formatMoney();
+   };
+</script>
+</body>
+</html>
